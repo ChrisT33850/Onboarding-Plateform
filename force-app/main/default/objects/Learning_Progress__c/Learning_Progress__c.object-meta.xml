@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddRelated</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Create</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CreateRelated</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Tracking de progression utilisateur dans les parcours d'apprentissage</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <description>Date/heure de complétion du module</description>
+        <externalId>false</externalId>
+        <fieldManageability>DefinedByMetadata</fieldManageability>
+        <label>Completed Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Knowledge_View_Confirmed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Confirme que l'article Knowledge a été vu (via Contact Portal View)</description>
+        <externalId>false</externalId>
+        <fieldManageability>DefinedByMetadata</fieldManageability>
+        <label>Knowledge View Confirmed</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Learning_Level__c</fullName>
+        <description>Niveau auquel appartient ce module</description>
+        <externalId>false</externalId>
+        <fieldManageability>DefinedByMetadata</fieldManageability>
+        <label>Learning Level</label>
+        <referenceTo>Learning_Level__c</referenceTo>
+        <relationshipLabel>Learning Progress (by Level)</relationshipLabel>
+        <relationshipName>Learning_Progress_by_Level</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Learning_Track__c</fullName>
+        <description>Track auquel appartient ce module</description>
+        <externalId>false</externalId>
+        <fieldManageability>DefinedByMetadata</fieldManageability>
+        <label>Learning Track</label>
+        <referenceTo>Learning_Track__c</referenceTo>
+        <relationshipLabel>Learning Progress</relationshipLabel>
+        <relationshipName>Learning_Progress</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Module__c</fullName>
+        <description>Module suivi par l'utilisateur</description>
+        <externalId>false</externalId>
+        <fieldManageability>DefinedByMetadata</fieldManageability>
+        <label>Module</label>
+        <referenceTo>Learning_Module__c</referenceTo>
+        <relationshipLabel>Learning Progress Records</relationshipLabel>
+        <relationshipName>Learning_Progress_Records</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Started_Date__c</fullName>
+        <description>Date/heure du début du module</description>
+        <externalId>false</externalId>
+        <fieldManageability>DefinedByMetadata</fieldManageability>
+        <label>Started Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Statut de progression dans ce module</description>
+        <externalId>false</externalId>
+        <fieldManageability>DefinedByMetadata</fieldManageability>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+                <label>Not Started</label>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <description>Utilisateur qui suit l'apprentissage</description>
+        <externalId>false</externalId>
+        <fieldManageability>DefinedByMetadata</fieldManageability>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipLabel>Learning Progress</relationshipLabel>
+        <relationshipName>Learning_Progress</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Learning Progress</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>LP-{00000000}</displayFormat>
+        <label>Learning Progress ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Learning Progress</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <searchLayouts>
+        <customTabListAdditionalFields>User__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Module__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Started_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Completed_Date__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwnerOne</excludedStandardButtons>
+        <excludedStandardButtons>Clone</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>PrintableListView</excludedStandardButtons>
+        <excludedStandardButtons>Share</excludedStandardButtons>
+        <listViewButtons>New</listViewButtons>
+        <lookupDialogsAdditionalFields>User__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Module__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Started_Date__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>User__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Module__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Started_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
