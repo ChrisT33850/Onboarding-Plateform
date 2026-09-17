@@ -1,118 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>AddRelated</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Create</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CreateRelated</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <description>Niveaux d'apprentissage (Foundation, Acquisition, Expansion)</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
-    <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Description__c</fullName>
-        <description>Description détaillée du niveau</description>
+        <description>Description du niveau</description>
         <externalId>false</externalId>
-        <fieldManageability>DefinedByMetadata</fieldManageability>
         <label>Description</label>
         <length>32000</length>
         <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Icon_URL__c</fullName>
-        <description>URL de l'icône/logo du niveau</description>
+        <description>URL de l'icône</description>
         <externalId>false</externalId>
-        <fieldManageability>DefinedByMetadata</fieldManageability>
         <label>Icon URL</label>
         <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
         <type>Url</type>
     </fields>
     <fields>
         <fullName>Order__c</fullName>
-        <description>Ordre d'affichage (1=Foundation, 2=Acquisition, 3=Expansion)</description>
+        <description>Ordre d'affichage</description>
         <externalId>false</externalId>
-        <fieldManageability>DefinedByMetadata</fieldManageability>
-        <inlineHelpText>1 = Foundation, 2 = Acquisition, 3 = Expansion</inlineHelpText>
         <label>Order</label>
         <precision>2</precision>
         <required>true</required>
         <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
         <type>Number</type>
     </fields>
     <fields>
         <fullName>Required_Articles_Count__c</fullName>
-        <description>Nombre d'articles à lire pour passer au niveau suivant</description>
+        <description>Nombre d'articles requis</description>
         <externalId>false</externalId>
-        <fieldManageability>DefinedByMetadata</fieldManageability>
         <label>Required Articles Count</label>
         <precision>3</precision>
         <required>false</required>
         <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
         <type>Number</type>
     </fields>
     <fields>
         <fullName>Status__c</fullName>
-        <description>Statut du niveau</description>
+        <description>Statut</description>
         <externalId>false</externalId>
-        <fieldManageability>DefinedByMetadata</fieldManageability>
         <label>Status</label>
         <picklist>
             <picklistValues>
@@ -133,104 +71,29 @@
             <sorted>false</sorted>
         </picklist>
         <required>true</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
     <label>Learning Level</label>
-    <listViews>
-        <fullName>All</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
     <nameField>
         <label>Level Name</label>
-        <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Learning Levels</pluralLabel>
-    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>Foundation</fullName>
         <active>true</active>
-        <description>Foundation level - Basics</description>
         <label>Foundation</label>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>Active</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Draft</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Archived</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>Acquisition</fullName>
         <active>true</active>
-        <description>Acquisition level - Intermediate</description>
         <label>Acquisition</label>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>Active</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Draft</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Archived</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>Expansion</fullName>
         <active>true</active>
-        <description>Expansion level - Advanced</description>
         <label>Expansion</label>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>Active</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Draft</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Archived</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
     </recordTypes>
-    <searchLayouts>
-        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Order__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwnerOne</excludedStandardButtons>
-        <excludedStandardButtons>Clone</excludedStandardButtons>
-        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>PrintableListView</excludedStandardButtons>
-        <excludedStandardButtons>Share</excludedStandardButtons>
-        <listViewButtons>New</listViewButtons>
-        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Order__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
-        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Order__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
-    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
